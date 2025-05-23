@@ -6,6 +6,15 @@ import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
 ---
 <MainLayout title="Titel">
+	<article class="grid md:grid-cols-2 pt-xl">
+<video loop muted autoplay transition:persist>
+  <source
+    src="kvadrat-hero-video.mp4"
+    type="video/mp4"
+  />
+</video>
+<div></div>
+	</article>
 	<article class="max-w-screen-xl mx-auto">
 		<div class="prose">
 		<h1 class="text-xlarge">Design system!</h1>
