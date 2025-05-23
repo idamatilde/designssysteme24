@@ -1,10 +1,68 @@
 ---
 import { Image } from 'astro:assets';
+import SmallLogo from "./SmallLogo.astro"
 import bgContainer from "../assets/images/header-indhold-bg.png";
 import Button from "./Button.astro"
+import StripeBgDesktop from "./HeaderBg.astro"
+import logo from "../assets/images/logo-red.svg";
 ---
-<div class="max-w-screen-xl mx-auto ">
-    <Image src={bgContainer} class="block" alt="tre portræt billeder"></Image>
-    <Button>hejsa</Button>
+
+<div x-data="{ showmenu: false }" class="">
+    <section id="navbar" class="relative bg-gray-800" >
+        <div class="overflow-clip w-auto"><StripeBgDesktop></StripeBgDesktop></div>
+       <div class="overflow-clip w-auto"></div>
+        <a href="/">
+            <Image class="md:w-4xl lg:w-5xl absolute top-sm left-sm hidden md:block" src={logo} alt="Logo"/>
+        </a>   
+        <a href="/" class="md:hidden block top-s left-s absolute z-10 w-2xl">
+            <SmallLogo/>
+        </a>
+       
+         <nav id="desktopmenu" class="hidden lg:absolute top-ml lg:flex flex-row items-center gap-s right-s p-4 z-10 text-red-700" >
+            <Button variant="primary" size="small" href="/abonner">katalog</Button>
+            <Button variant="primary" size="small" href="/abonner">om os</Button>
+            <Button variant="primary" size="small" href="/abonner">følg med</Button>
+        </nav>
+        
+        <button id="burgermenu" class="absolute top-s right-s lg:hidden z-50 w-m h-h" x-on:click="showmenu = !showmenu">
+            <svg
+                x-show="!showmenu"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="#E7232D"
+                class="w-8 h-8 transition-transform duration-300 ease-in-out">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 12h18m-18 6h18" />
+            </svg>
+            <svg
+                x-show="showmenu"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="#E7232D"
+                class="w-8 h-8 transition-transform duration-300 ease-in-out">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </section>  
+    <nav id="mobilmenu" class="absolute -top-[0px] lg:hidden w-full" 
+    x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+        <!-- <div class="fill-red-700 absolute -top-36 md:-right-4 w-screen h-40 -right-3 -z-10 transition">
+        </div> -->
+        <div class="rotate-180 overflow-clip w-auto"></div>
+            <ul class="bg-beige-400 gap-s flex flex-col text-red-600 z-40 p-lg">         
+            <div class="flex flex-col items-center gap-s">
+                <Button variant="primary" size="small" href="/abonner">katalog</Button>
+            <Button variant="primary" size="small" href="/abonner">om os</Button>
+            <Button variant="primary" size="small" href="/abonner">følg med</Button>
+            </div>
+        </ul>
+        <div class="-z-10 overflow-clip w-auto"></div>
+    </nav>
+
 </div>
-    
+
+<div class="pt-lg lg:pt-xxs">
+</div>
