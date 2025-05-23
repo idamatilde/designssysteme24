@@ -1,6 +1,56 @@
 ---
+import Link from "./Link.astro";
+import { Image } from 'astro:assets';
+import logo from "../assets/images/logo-red.svg";
 ---
-<div>
-    <p class="max-w-screen-xl mx-auto text-white">Footer - tilføj footerindhold</p>
+
+<section class="pt-lg lg:pt-lg bg-no-repeat bg-cover" style="background-image: url('footer-bg.png');">
+
+<div class="pb-s">
+    <Image class="w-full h-6xl mx-auto px-lg mb-lg " src={logo} alt="Logo"/>
+
+    <div class="flex flex-row justify-between mx-auto px-lg md:px-5xl">
+        <div class="text-blue-950  "> 
+            <p class="font-extrabold pb-xs text-blue-950">Kontakt</p>
+           <div class=" flex flex-col justify-around">
+                <Link href=""><p class="text-blue-950">Instagram</p></Link>
+                <Link href=""><p class="text-blue-950">Facebook</p></Link>
+                <Link href=""><p class="text-blue-950">E-mail</p></Link>
+           </div>
+        </div>
+
+        <div class="text-blue-950 text-right md:text-left"> 
+            <p class="font-extrabold pb-xs text-blue-950">Sider</p>
+       <div class="flex flex-col items-end md:items-start justify-around ">
+        <span></span>
+        <Link href="/ompakken"><p class="text-blue-950 ">Katalog</p></Link>
+        <Link href="/omos"><p class="text-blue-950 ">Om os</p></Link>
+        <Link href="/abonner"><p class="text-blue-950 ">Følg med</p></Link>
+       </div>
+        </div>
+
+       
+        <div class="text-blue-950 text-right md:text-left"> 
+            <h3 class="font-extrabold pb-xs text-blue-950">Adresse</h3>
+       <div class="flex flex-col items-end md:items-start justify-around ">
+        <span></span>
+        <Link href="/"><p class="text-blue-950 ">Arresøgade 14</p></Link>
+        <Link href="/"><p class="text-blue-950 ">2200 København</p></Link>
+       </div>
+        </div>
+
+    </div>
+
+    <div class="flex flex-row justify-between mx-auto px-ml mt-ml">
+        <div class="flex flex-col content-center md:content-end">
+            <div class="flex flex-row pb-xxs md:justify-end pl-s">
+                
+            </div>
+            <p class="text-konsultativMobile text-red-950 pl-ml">© Period. 2024, alle rettigheder CVR 123456789</p>
+
+        </div>
+    </div>
+
 </div>
-      
+
+</section>
