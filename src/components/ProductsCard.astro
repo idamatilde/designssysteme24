@@ -1,0 +1,11 @@
+---
+const { product } = Astro.props;
+---
+
+<article class="w-[200px] md:w-[300px] mb-xs">
+    
+    <a href={`/produkt/${product.slug}`}> 
+    <h6 class="">{product.name}</h6>
+    <h6>{product.price}</h6>
+    </a>
+  </article>

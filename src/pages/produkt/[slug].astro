@@ -1,0 +1,35 @@
+---
+//ts-nocheck
+
+import { apiDetails } from "../../settings";
+
+export async function getStaticPaths() {
+  const res = await fetch(`${apiDetails.supabaseUrl}/rest/v1/products?select=*`, {
+    headers: {
+      apikey: apiDetails.supabaseAnonKey,
+      Authorization: `Bearer ${apiDetails.supabaseAnonKey}`,
+    },
+  });
+  const data = await res.json();
+
+  return data.map((product) => {
+    return {
+      params: { slug: product.slug },
+      props: { myProduct: product },
+    };
+  });
+}
+
+const { myProduct } = Astro.props;
+---
+
+<div class="flex flex-row justify-between items-center mr-sm md:mr-xl mb-s">  
+  <h4 class="text-brun-700"> {myProduct.price}</h4>
+</div>
+
+    <p>{myProduct.name}</p>
+
+<!-- indsæt knapper & accordion -->
+
+
+

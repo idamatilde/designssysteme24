@@ -1,0 +1,26 @@
+---
+//ts-nocheck
+
+import { apiDetails } from "../settings";
+import ProductCard from "../components/ProductsCard.astro"; 
+
+const res = await fetch(`${apiDetails.supabaseUrl}/rest/v1/products?select=*`, {
+  headers: {
+    apikey: apiDetails.supabaseAnonKey,
+    Authorization: `Bearer ${apiDetails.supabaseAnonKey}`,
+  },
+});
+const data = await res.json();
+console.log("Supabase URL:", apiDetails.supabaseUrl);
+console.log("Supabase anonKey:", apiDetails.supabaseAnonKey);
+
+---
+
+
+<h1 class="text-brun-600 m-s mx-xl">Bryllup</h1>
+
+
+
+<div class="flex flex-wrap md:gap-s md:m-xl  justify-evenly ">
+  {data.map((product) => <ProductCard {product} /> )}
+
