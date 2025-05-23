@@ -1,6 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import bgContainer from "../assets/images/header-indhold-bg.png";
+import Button from "./Button.astro"
 ---
-<div class="max-w-screen-xl mx-auto text-white">
-    Header/Navigation
+<div class="max-w-screen-xl mx-auto ">
+    <Image src={bgContainer} class="block" alt="tre portræt billeder"></Image>
+    <Button>hejsa</Button>
 </div>
     
