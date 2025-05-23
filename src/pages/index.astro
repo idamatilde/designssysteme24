@@ -5,7 +5,9 @@ import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
 ---
+
 <MainLayout title="Titel">
+	
 	<article class="grid md:grid-cols-2 pt-xl">
 <video loop muted autoplay transition:persist>
   <source
@@ -13,7 +15,11 @@ import thumbsup from "../assets/images/thumbsup.png";
     type="video/mp4"
   />
 </video>
-<div></div>
+<div class="flex flex-col justify-center">
+	<h1>kiosk</h1>
+	<h3>mad - drikke - hangout</h3>
+	<h5>Arresøgade 14 - Nørrebro - 2200 København</h5>
+</div>
 	</article>
 	<article class="max-w-screen-xl mx-auto">
 		<div class="prose">

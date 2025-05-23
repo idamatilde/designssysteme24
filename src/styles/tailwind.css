@@ -19,40 +19,41 @@ font-stretch:normal;
     font-family: "eds-market-narrow-slant";
     font-weight: 700;
   }
-
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6 {
-    font-family: "eds-market-narrow-slant";
-    color: #000000;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
+  h6,
   p {
     font-family: "eds-market-narrow-slant";
-    color: #000000;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
   }
-  
- h1 {
-   letter-spacing: 2px;
+
+  h1 {
+    @apply text-largeMobile md:text-largeDesk text-red-700 md:pb-xxs;
   }
   h2 {
-    letter-spacing: 1px;
+    @apply text-mediumLargeMobile  md:text-mediumLargeDesk text-red-700 md:pb-xxs;
   }
   h3 {
-    letter-spacing: 0.5px;
+    @apply text-mediumMobile   md:text-mediumDesk text-blue-600 md:pb-xxs;
   }
   h4 {
-    letter-spacing: 0.25x;
+    @apply text-smallMediumMobile md:text-smallMediumDesk text-blue-600 md:pb-xxs;
   }
-  
+  h5 {
+    @apply text-smallMobile md:text-smallDesk md:pb-xxs;
+  }
+  h6,
+  summary,
+  span {
+    @apply text-baseMobile md:text-baseDesk ;
+  }
+  p {
+    @apply text-bodyMobile md:text-bodyDesk  ;
+  }
 }
+
 @media (min-width: 769px) {
   /* General classnames */
   .pc-only {
