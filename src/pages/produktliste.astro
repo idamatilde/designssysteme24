@@ -6,6 +6,9 @@ import ProductCard from "../components/ProductsCard.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+
 
 const res = await fetch(`${apiDetails.supabaseUrl}/rest/v1/products?select=*`, {
   headers: {
@@ -23,31 +26,27 @@ console.log("Supabase anonKey:", apiDetails.supabaseAnonKey);
   {data.map((product) => <ProductCard {product} /> )}
  -->
 
-<MainLayout title="Afto font">
+<MainLayout>
 	<article id="hero" class="md:grid md:grid-cols-8 flex flex-col">
 		<div class="col-start-3 col-span-4 border-2 border-[var(--purple-2)] bg-[var(--white)] p-10">
 			<div class="flex justify-self-center items-center md:px-24 md:max-w-[100%]">
 			</div>
 			</div>
-			<svg class="hidden md:grid col-start-7 place-self-start ml-4" width="75" height="111" viewBox="0 0 75 111" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<g clip-path="url(#clip0_3_27)">
-				<path d="M74.93 55.44C69.06 52.38 59.81 46.61 51.82 36.64C39.97 21.86 37.92 6.61 37.46 0C36.84 6.87 34.45 21.85 22.77 36.49C14.92 46.34 5.91 52.22 0 55.44C1.81 56.34 3.97 57.5 6.33 58.97C11.51 62.34 17.6 67.2 23.1 74.06C34.95 88.84 37 104.09 37.45 110.7C37.45 110.69 37.45 110.67 37.45 110.66C37.45 110.73 37.45 110.81 37.46 110.88C37.46 110.77 37.46 110.64 37.46 110.52C38.1 103.57 40.55 88.73 52.14 74.2C59.21 65.34 67.2 59.71 73.03 56.32C73.7 56 74.34 55.7 74.92 55.44H74.93Z" fill="#2A122A"/>
-				</g>
-				<defs>
-				<clipPath id="clip0_3_27">
-				<rect width="74.93" height="110.88" fill="white"/>
-				</clipPath>
-				</defs>
-				</svg>
 	</article>
 	<article>
 
 <div class="product-page">
-    <article class="product">
+    <article class="product -z-10">
         <!-- Sticky section containing image gallery -->
         <div class="product-media i-sticky md:px-0 px-10">
             <div class="dummy--gallery grid grid-cols-2 grid-rows-3 justify-stretch h-[700px] lg:w-[450px] ml-2 mb-2">
-                <p>hej</p>
+                <div class="bg-green-100 shadow-short mt-ml mb-ml rounded-r-3xl h-[550px]">
+                    <nav class="flex flex-col items-center gap-s p-4 text-red-700" >
+            <Button variant="primary" size="medium" href="/produktliste">katalog</Button>
+            <Button variant="primary" size="medium" href="/om-os">om os</Button>
+            <Button variant="primary" size="medium" href="/folg-med">følg med</Button>
+        </nav>
+                </div>
             </div>
         </div>
       
@@ -109,8 +108,6 @@ console.log("Supabase anonKey:", apiDetails.supabaseAnonKey);
 }
 
 .dummy--gallery {
-    background: #663399;
-    background: rebeccapurple;
     min-height: 400px;
 }
 
