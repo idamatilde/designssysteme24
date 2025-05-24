@@ -29,6 +29,10 @@ const { myProduct } = Astro.props;
 
     <p>{myProduct.name}</p>
 
+    <div class="w-[200px] md:w-[300px] overflow-hidden">
+            <img src={`/images/${myProduct.image}`} alt={myProduct.name} class="object-cover transition-all ease-in hover:scale-110" />
+        </div>   
+
 <!-- indsæt knapper & accordion -->
 
 
