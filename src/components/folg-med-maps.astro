@@ -1,0 +1,16 @@
+---
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+import Google from "../assets/images/google-maps.png";
+import { Image } from 'astro:assets';
+---
+<article class="grid grid-cols-1 md:grid-cols-2">
+    <div class="flex flex-col text-center md:text-end">
+        <h2 class="text-blue-700">Besøg os her:</h2>
+        <h4 class="hidden md:block">Arresøgade 14 <br>
+2200 København</h4>
+    </div>
+    <Image class="h-8xl w-auto" src={Google} alt="Billede af google maps"/>
+    <h4 class="md:hidden block text-right">Arresøgade 14 <br>
+2200 København</h4>
+</article>
