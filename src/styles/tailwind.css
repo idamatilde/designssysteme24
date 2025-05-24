@@ -1,6 +1,9 @@
 /* import af adobe-font */
 @import url("https://p.typekit.net/p.css?s=1&k=ndv8zye&ht=tk&f=35889&a=166098997&app=typekit&e=css");
 
+/* import af google font */
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,14 +22,24 @@ font-stretch:normal;
     font-family: "eds-market-narrow-slant";
     font-weight: 700;
   }
+
+.display-tekst{
+  font-size: 4.488rem;
+  line-height: 4rem;
+}
+
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  p {
+  h6{
     font-family: "eds-market-narrow-slant";
+  }
+
+ p,
+  summary {
+    font-family: "Gabarito";
   }
 
   h1 {
@@ -63,4 +76,9 @@ font-stretch:normal;
   .pc-hide {
     display: none;
   }
+
+  .display-tekst{
+  font-size: 8rem;
+  line-height: 7.5rem;
+}
 }
