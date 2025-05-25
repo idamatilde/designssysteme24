@@ -11,12 +11,16 @@ import Folgmed from '../components/folg-med-maps.astro';
 <MainLayout>
     <article id="sec-1" class="grid md:grid-cols-2 pt-xl">
 <Image class="w-full" src={Billede1} alt="Billede af kiosken"/>
-<div class="flex flex-col -order-1 md:order-1 pt-xl pb-sm md:pt-none md:pb-none">
-	<h1 class="display-tekst">kiosk</h1>
+<div class="flex flex-col justify-center gap-xxs md:px-sm -order-1 md:order-1 pt-xl pb-sm md:pt-none md:pb-none">
+	<h1 class="display-tekst md:text-left text-center">kiosk</h1>
 	<p class="hidden md:block">Hos Fatter & Havmanden er vi mere til håndplukkede varer, lidt nostalgi i posen og en god sludder over disken. Vi er selv vokset op med den lokale kiosk, hvor man blandede slik for en tier, fik en is med flødebolle på toppen og altid lige hilste på nogen man kendte.</p>
 <p class="hidden md:block">
 Vi har skabt Fatter & Havmanden som en hyldest til den klassiske kiosk – ikke en poleret convenience store, men et rigtigt sted med personlighed, skæve hylder og varer valgt med både kærlighed for kvalitet og hvad vi købte i gamle dage.</p>
 </div>
+<div class="md:hidden block">
+<p>Hos Fatter & Havmanden er vi mere til håndplukkede varer, lidt nostalgi i posen og en god sludder over disken. Vi er selv vokset op med den lokale kiosk, hvor man blandede slik for en tier, fik en is med flødebolle på toppen og altid lige hilste på nogen man kendte.</p>
+<p>Vi har skabt Fatter & Havmanden som en hyldest til den klassiske kiosk – ikke en poleret convenience store, men et rigtigt sted med personlighed, skæve hylder og varer valgt med både kærlighed for kvalitet og hvad vi købte i gamle dage.</p>
+    </div>
 	</article>
     <article id="so-me" class="pt-lg lg:pt-lg bg-beige-200 md:bg-beige-300 shadow-long md:shadow-none md:bg-no-repeat md:bg-contain" style="background-image: url('aabningstider-bg.png');" >
 		<div class="h-9xl flex flex-col md:flex-row justify-center items-center">
