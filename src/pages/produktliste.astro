@@ -27,51 +27,29 @@ console.log("Supabase anonKey:", apiDetails.supabaseAnonKey);
  -->
 
 <MainLayout>
-	<article id="hero" class="md:grid md:grid-cols-8 flex flex-col">
-		<div class="col-start-3 col-span-4 border-2 border-[var(--purple-2)] bg-[var(--white)] p-10">
-			<div class="flex justify-self-center items-center md:px-24 md:max-w-[100%]">
-			</div>
-			</div>
-	</article>
-	<article>
 
 <div class="product-page">
-    <article class="product -z-10">
+    <article class="product">
         <!-- Sticky section containing image gallery -->
         <div class="product-media i-sticky md:px-0 px-10">
             <div class="dummy--gallery grid grid-cols-2 grid-rows-3 justify-stretch h-[700px] lg:w-[450px] ml-2 mb-2">
-                <div class="bg-green-100 shadow-short mt-ml mb-ml rounded-r-3xl h-[550px]">
-                    <nav class="flex flex-col items-center gap-s p-4 text-red-700" >
-            <Button variant="primary" size="medium" href="/produktliste">katalog</Button>
-            <Button variant="primary" size="medium" href="/om-os">om os</Button>
-            <Button variant="primary" size="medium" href="/folg-med">følg med</Button>
+                <div class=" bg-green-100 shadow-short mt-ml mb-ml rounded-r-3xl h-[550px] w-9xl flex flex-col items-center justify-center">
+                    <nav class="flex flex-col  gap-s p-4 text-red-700" >
+            <Button variant="primary" size="medium" href="/madvarer-listeview">madvarer</Button>
+            <Button variant="primary" size="medium" href="/drikkevarer-listeview">drikkevarer</Button>
+            <Button variant="primary" size="medium" href="/ting-listeview">Ting & sager</Button>
         </nav>
                 </div>
             </div>
         </div>
       
         <div class="product-detail">
-            <div class="flex flex-col h-80 bg-[var(--white)] ml-auto border-2 border-[var(--purple-2)] p-5">
-                 <div class="flex flex-wrap md:gap-s justify-evenly ">
+            <div class="flex flex-col h-80 ml-auto p-xs pt-6xl">
+                 <div class="flex flex-wrap md:gap-s justify-evenly">
   {data.map((product) => <ProductCard {product} /> )}
             </div>
-            <div class="flex flex-col justify-between h-80 bg-[var(--white)] ml-auto border-2 border-[var(--purple-2)] p-5">
-                <div class="flex flex-row justify-end">
-                    <p class=""><span class="text-[var(--text-color)]">Inspired by</span> <br> Groovy 70's <br> wallpaper <br><span class="text-[var(--text-color)]">and</span></p></div>
-            
-                <p class="">Mid <br>century <br>modern <span class="text-[var(--text-color)]">design</span></p>
-            </div>
-            <div class="ml-auto border-2 border-[var(--purple-2)]"><Image class="h-9xl" src={thumbsup} alt=""></Image></div>
-            <div class="h-20 grid grid-cols-8"><div class="col-span-5 border-r-2  border-[var(--purple-2)] "></div></div>
-            <div class="mr-auto ml-auto border-2 border-[var(--purple-2)]"><Image class="h-9xl" src={thumbsup} alt=""></Image></div>
-            <div class="h-20 grid grid-cols-8"><div class="col-span-5 border-r-2  border-[var(--purple-2)] "></div></div>
-            <div class="ml-auto border-2 border-[var(--purple-2)]"><Image class="h-9xl" src={thumbsup} alt=""></Image></div>
-            <div class="h-60 grid grid-cols-8"><div class="col-span-5 border-r-2  border-[var(--purple-2)] "></div></div>
-            <div class="hidden md:grid h-60 grid-cols-8"><div class="col-span-5 border-r-2  border-[var(--purple-2)] "></div></div>
-            <!-- <div class="dummy">You May Need</div> -->
         </div>
     </article>
-    <!-- <div class="dummy">More</div> -->
 </div>
 	</article>
 </MainLayout>
@@ -91,8 +69,6 @@ console.log("Supabase anonKey:", apiDetails.supabaseAnonKey);
 .dummy {
     text-align: center;
     padding: 1em 0;
-    background: dodgerblue;
-    color: white;
     margin: 16px 8px;
     border-radius: 4px;
     min-height: 80px;
@@ -132,20 +108,11 @@ console.log("Supabase anonKey:", apiDetails.supabaseAnonKey);
 @media screen and (min-width: 768px) {
     .product-media {
         float: left;
-        width: 50%;
-    }
-
-    .product-detail {
-        width: 50%;
-        float: right;
-    }
-	.product-media-2 {
-        float: left;
-        width: 50%;
+        width: 35%;
     }
 
     .product-detail-2 {
-        width: 50%;
+        width: 65%;
         float: right;
     }
 }

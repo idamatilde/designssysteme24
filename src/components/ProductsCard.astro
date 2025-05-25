@@ -2,13 +2,12 @@
 const { product } = Astro.props;
 ---
 
-<article class="w-[200px] md:w-[300px] mb-xs bg-red-300">
-    
+<article class="w-[200px] md:w-[250px] mb-xs flex flex-col items-center">
     <a href={`/produkt/${product.slug}`}>
-      <div class="w-ml overflow-hidden">
-            <img src={`/product_images/${product.image}`} alt={product.name} class="object-cover transition-all ease-in hover:scale-110" />
+      <div class="overflow-hidden transition-all ease-in hover:scale-110 hover:rotate-1">
+            <img src={`/product_images/${product.image}`} alt={product.name} class="w-full h-6xl object-contain" />
         </div>   
     <h6 class="">{product.name}</h6>
-    <h6>{product.price}</h6>
+    <h6>{product.price} kr</h6>
     </a>
   </article>
