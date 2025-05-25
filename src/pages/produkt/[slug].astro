@@ -36,16 +36,18 @@ const { myProduct } = Astro.props;
 ---
 <MainLayout title="Titel"> 
 <article id="produkt" class="grid md:grid-cols-2 pt-2xl md:pt-6xl">
-<div class="overflow-hidden grid items-center justify-self-center justify-center w-9xl h-9xl bg-red-50 md:bg-no-repeat md:bg-contain md:bg-center" style="background-image: url('../shop-bg-singleview.jpg');">
+<div class="overflow-hidden grid items-center justify-self-center justify-center w-9xl h-9xl md:bg-no-repeat md:bg-contain md:bg-center" style="background-image: url('../shop-bg-singleview.jpg');">
             <img src={`/product_images/${myProduct.image}`} alt={myProduct.name} class="z-30 object-cover w-auto h-8xl p-xxs" />
 			<Image class="h-9xl w-auto absolute z-10" src={Produktbg} alt="billede af kiosk"/>
         </div>  
-<div class="flex flex-col -order-1 md:order-1 pt-xl pb-sm md:pt-none md:pb-none">
+<div class="flex flex-col  pt-xl pb-sm md:pt-none md:pb-none">
 	<div class="flex flex-col">  
-  <h2>{myProduct.name}</h2>
+  <h3>{myProduct.name}</h3>
     <h4 class="text-brun-700">{myProduct.price} kr</h4>
 </div>
-    <p>{myProduct.name}</p>
+    <p class="pr-none md:pr-lg">{myProduct.description}</p>
+	<h6>Indhold: {myProduct.indhold}</h6>
+	<h6>Alkohol: {myProduct.alkohol}</h6>
 </div>
 	</article>
 
