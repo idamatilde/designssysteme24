@@ -5,8 +5,10 @@ import Button from '../../components/Button.astro';
 import Link from '../../components/Link.astro';
 import { Image } from 'astro:assets';
 import logo from "../../assets/images/logo-red.svg";
-
+import Map from '../../components/folg-med-maps.astro';
 import { apiDetails } from "../../settings";
+import LogoMaskot from "../../assets/images/fatter-maskot.png";
+import ProductCard from "../../components/ProductsCard.astro";
 
 export async function getStaticPaths() {
   const res = await fetch(`${apiDetails.supabaseUrl}/rest/v1/products?select=*`, {
@@ -25,20 +27,41 @@ export async function getStaticPaths() {
   });
 }
 
+
 const { myProduct } = Astro.props;
 ---
 <MainLayout title="Titel"> 
 <article id="produkt" class="grid md:grid-cols-2 pt-2xl md:pt-6xl">
-<div class="overflow-hidden grid items-center justify-center bg-red-50">
-            <img src={`/product_images/${myProduct.image}`} alt={myProduct.name} class="object-cover w-[100px] md:w-[180px]" />
+<div class="overflow-hidden grid items-center justify-self-center justify-center w-8xl h-8xl bg-red-50">
+            <img src={`/product_images/${myProduct.image}`} alt={myProduct.name} class=" object-cover w-[100px] md:w-[225px]" />
         </div>  
 <div class="flex flex-col -order-1 md:order-1 pt-xl pb-sm md:pt-none md:pb-none">
-	<div class="flex flex-col justify-between items-center mr-sm md:mr-xl mb-s">  
-  <h1>{myProduct.name}</h1>
-    <h4 class="text-brun-700"> {myProduct.price}</h4>
+	<div class="flex flex-col">  
+  <h2>{myProduct.name}</h2>
+    <h4 class="text-brun-700">{myProduct.price} kr</h4>
 </div>
     <p>{myProduct.name}</p>
 </div>
 	</article>
-<!-- indsæt knapper & accordion -->
+  <article id="andre-varer" class="flex flex-col w-screen justify-center items-center md:m-auto pt-lg pb-ml md:pb-none lg:pt-none md:bg-no-repeat md:bg-contain md:bg-center bg-beige-200 md:bg-beige-300" style="background-image: url('../aabningstider-bg.png');" >
+		<div class="md:h-[500px] h-auto flex flex-col md:flex-row justify-center items-center px-3xl py-sm bg-beige-200 md:bg-transparent shadow-long md:shadow-none">
+			<div class=" flex flex-col justify-center items-center">
+				<h2>åbningstider:</h2>
+					<div>
+						<p class="edsmarket font-regular">Mandag.................................Lukket</p>
+						<p class="edsmarket font-regular">Tirsdag.....................................9-18</p>
+						<p class="edsmarket font-regular">Onsdag......................................9-18</p>
+						<p class="edsmarket font-regular">Torsdag....................................9-20</p>
+						<p class="edsmarket font-regular">Fredag......................................9-20</p>
+						<p class="edsmarket font-regular">Lørdag......................................9-20</p>
+						<p class="edsmarket font-regular">Søndag......................................9-17</p>
+					</div>
+				</div>
+				<div>
+				<Image class="w-6xl md:w-6xl lg:w-7xl" src={LogoMaskot} alt="Logo maskot"/>
+			</div>
+			</div>
+		</div>
+	</article>
+<Map/>
 </MainLayout>

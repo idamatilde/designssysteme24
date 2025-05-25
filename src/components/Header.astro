@@ -8,7 +8,7 @@ import logo from "../assets/images/logo-red.svg";
 ---
 
 <div x-data="{ showmenu: false }" class="">
-    <section id="navbar" class="absolute bg-gray-800 z-40" >
+    <section id="navbar" class="absolute bg-gray-800 z-10" >
         <div class="overflow-clip w-auto"><StripeBgDesktop></StripeBgDesktop></div>
        <div class="overflow-clip w-auto"></div>
         <a href="/">
@@ -23,7 +23,7 @@ import logo from "../assets/images/logo-red.svg";
             <Button variant="primary" size="small" href="/om-os">om os</Button>
             <Button variant="primary" size="small" href="/folg-med">følg med</Button>
         </nav>
-        
+    </section>  
         <button id="burgermenu" class="absolute top-s right-s lg:hidden z-50 w-m h-h" x-on:click="showmenu = !showmenu">
             <svg
                 x-show="!showmenu"
@@ -46,8 +46,7 @@ import logo from "../assets/images/logo-red.svg";
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
-    </section>  
-    <nav id="mobilmenu" class="absolute -top-[0px] lg:hidden w-full" 
+    <nav id="mobilmenu" class="absolute z-20 -top-[0px] lg:hidden w-full" 
     x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
         <!-- <div class="fill-red-700 absolute -top-36 md:-right-4 w-screen h-40 -right-3 -z-10 transition">
         </div> -->
