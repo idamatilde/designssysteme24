@@ -1,5 +1,10 @@
 ---
 //ts-nocheck
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from '../../components/Button.astro';
+import Link from '../../components/Link.astro';
+import { Image } from 'astro:assets';
+import logo from "../../assets/images/logo-red.svg";
 
 import { apiDetails } from "../../settings";
 
@@ -22,18 +27,18 @@ export async function getStaticPaths() {
 
 const { myProduct } = Astro.props;
 ---
-
-<div class="flex flex-row justify-between items-center mr-sm md:mr-xl mb-s">  
-  <h4 class="text-brun-700"> {myProduct.price}</h4>
+<MainLayout title="Titel"> 
+<article id="produkt" class="grid md:grid-cols-2 pt-2xl md:pt-6xl">
+<div class="overflow-hidden grid items-center justify-center bg-red-50">
+            <img src={`/product_images/${myProduct.image}`} alt={myProduct.name} class="object-cover w-[100px] md:w-[180px]" />
+        </div>  
+<div class="flex flex-col -order-1 md:order-1 pt-xl pb-sm md:pt-none md:pb-none">
+	<div class="flex flex-col justify-between items-center mr-sm md:mr-xl mb-s">  
+  <h1>{myProduct.name}</h1>
+    <h4 class="text-brun-700"> {myProduct.price}</h4>
 </div>
-
     <p>{myProduct.name}</p>
-
-    <div class="w-[200px] md:w-[300px] overflow-hidden">
-            <img src={`/images/${myProduct.image}`} alt={myProduct.name} class="object-cover transition-all ease-in hover:scale-110" />
-        </div>   
-
+</div>
+	</article>
 <!-- indsæt knapper & accordion -->
-
-
-
+</MainLayout>
