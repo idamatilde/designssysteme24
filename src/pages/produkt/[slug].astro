@@ -32,7 +32,7 @@ const { myProduct } = Astro.props;
 ---
 <MainLayout title="Titel"> 
 <article id="produkt" class="grid md:grid-cols-2 pt-2xl md:pt-6xl">
-<div class="overflow-hidden grid items-center justify-self-center justify-center w-9xl h-9xl bg-red-50 md:bg-no-repeat md:bg-contain md:bg-center" style="background-image: url('./public/shop-bg-singleview.jpg');">
+<div class="overflow-hidden grid items-center justify-self-center justify-center w-9xl h-9xl bg-red-50 md:bg-no-repeat md:bg-contain md:bg-center" style="background-image: url('../../../public/shop-bg-singleview.jpg');">
             <img src={`/product_images/${myProduct.image}`} alt={myProduct.name} class=" object-cover w-auto h-8xl p-xxs" />
         </div>  
 <div class="flex flex-col -order-1 md:order-1 pt-xl pb-sm md:pt-none md:pb-none">
