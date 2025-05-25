@@ -28,23 +28,43 @@ console.log("Supabase anonKey:", apiDetails.supabaseAnonKey);
         <!-- Sticky section containing image gallery -->
         <div class="product-media i-sticky md:px-0 px-10">
             <div class="dummy--gallery grid grid-cols-2 md:grid-rows-3 justify-stretch h-[300px] md:h-[700px] lg:w-[450px] ml-2 mb-none md:mb-2">
-                <div class=" bg-green-100 shadow-short mt-ml mb-xs md:mb-ml rounded-r-none md:rounded-r-3xl h-[200px] w-screen md:h-[550px] md:w-9xl flex flex-col items-center justify-end md:justify-center">
-                    <nav class="md:flex flex-col items-center justify-center gap-s p-4 hidden" >
+                <div class=" bg-green-100 shadow-short mt-ml mb-xs md:mb-ml pt-none md:pt-lg rounded-r-none md:rounded-r-3xl h-[240px] w-screen md:h-[550px] md:w-9xl flex flex-col items-center justify-end md:justify-center">
+                    <nav class="md:flex flex-col items-center justify-center gap-s hidden" >
             <Button variant="primary" size="medium" href="/madvarer-listeview">madvarer</Button>
             <Button variant="primary" size="medium" href="/drikkevarer-listeview">drikkevarer</Button>
             <Button variant="primary" size="medium" href="/ting-listeview">Ting & sager</Button>
         </nav>
-        <nav class="flex flex-wrap items-center justify-center gap-s pb-m p-4 md:hidden" >
+        <div class="md:flex flex-col hidden text-right p-s gap-xxs">
+            <div >
+            <label class="pr-xxs" for="Glutenfri"> Glutenfri</label>
+             <input class="border-white rounded-sm focus:ring-green-500 dark:focus:ring-green-600 text-red-700" type="checkbox" id="glutenfri" name="glutenfri" value="Glutenfri">
+             </div>
+             <div>
+             <label class="pr-xxs" for="Alkoholfri"> Alkoholfri</label>
+             <input class="border-white rounded-sm focus:ring-green-500 dark:focus:ring-green-600 text-red-700" type="checkbox" id="alkoholfri" name="alkoholfri" value="Alkoholfri">
+        </div>
+            </div>
+        <nav class="flex flex-wrap items-center justify-center gap-s pb-sm p-4 md:hidden" >
             <Button variant="primary" size="small" href="/madvarer-listeview">madvarer</Button>
             <Button variant="primary" size="small" href="/drikkevarer-listeview">drikkevarer</Button>
             <Button variant="primary" size="small" href="/ting-listeview">Ting & sager</Button>
         </nav>
+        <div class="flex md:hidden flex-row gap-sm pb-xs">
+            <div >
+            <label class="pr-xxs" for="Glutenfri"> Glutenfri</label>
+             <input class="border-white rounded-sm focus:ring-green-500 dark:focus:ring-green-600 text-red-700" type="checkbox" id="glutenfri" name="glutenfri" value="Glutenfri">
+             </div>
+             <div>
+             <label class="pr-xxs" for="Alkoholfri"> Alkoholfri</label>
+             <input class="border-white rounded-sm focus:ring-green-500 dark:focus:ring-green-600 text-red-700" type="checkbox" id="alkoholfri" name="alkoholfri" value="Alkoholfri">
+        </div>
+            </div>
                 </div>
             </div>
         </div>
       
         <div class="product-detail">
-            <div class="flex flex-col md:h-80 ml-auto p-xs pt-none md:pt-6xl">
+            <div class="flex flex-col ml-auto pt-none md:pt-6xl">
                  <div class="flex flex-wrap md:gap-s justify-evenly">
   {data.map((product) => <ProductCard {product} /> )}
             </div>
