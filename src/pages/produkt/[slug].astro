@@ -60,11 +60,9 @@ const { myProduct } = Astro.props;
   <h3>{myProduct.name}</h3>
     <h4 class="text-brun-700">{myProduct.price} kr</h4>
 </div>
-<div class="px-sm md:px-none pr-none md:pr-lg">
-    <p class="">{myProduct.description}</p>
+    <p class="pr-sm md:pr-none max-w-none md:max-w-lg">{myProduct.description}</p>
 	<h6 class="pt-xxs">Indhold: {myProduct.indhold}</h6>
 	<h6 class="pt-xxs">{myProduct.alkohol}</h6>
-</div>
 </div>
 	</article>
 
