@@ -46,7 +46,7 @@ const { myProduct } = Astro.props;
 <article id="produkt" class="grid md:grid-cols-2 pt-s md:pt-6xl">
 <div class="overflow-hidden grid relative items-center justify-self-center justify-center w-7xl h-7xl md:w-9xl md:h-9xl md:bg-no-repeat md:bg-contain md:bg-center" style="background-image: url('../shop-bg-singleview.jpg');">
             <img src={`/product_images/${myProduct.image}`} alt={myProduct.name} class="z-30 object-cover w-auto h-8xl p-xxs" />
-			<Image class="h-9xl w-auto absolute z-10" src={Produktbg} alt="billede af kiosk"/>
+			<Image class="h-7xl md:h-9xl w-auto absolute z-10" src={Produktbg} alt="billede af kiosk"/>
        <a href="/produktliste" class="">
 <div class="md:absolute md:block hidden z-20 left-xs top-xs">
   <svg width="48" height="27" viewBox="0 0 48 27" fill="none" xmlns="http://www.w3.org/2000/svg">
