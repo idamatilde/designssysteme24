@@ -3,7 +3,7 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		
-    /* Tilføj din egen farvepalette nedenfor */
+    /* farvepalette */
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -74,7 +74,7 @@ export default {
       black: "#000",
     },
 
-    /* Tilføj din egen spacing nedenfor */
+    /* spacing  */
     spacing: {
       none: "0px",
       xxs: "8px",
@@ -95,12 +95,12 @@ export default {
       "9xl": "424px",
     },
 
-    /* Tilføj fonte herunder - husk også at tilføje webfonte i head-sektionen i MainLayout  */
+    /*  fonte  */
     fontFamily: {
       sans: ["eds-market-narrow-slant", "serif"],
     },
 
-    /* Tilføj dit typografiske hierarki herunder */
+    /* typografiske hierarki */
         fontSize: {
           konsultativDesk: ["1rem", { lineHeight: "1.2rem" }],
           bodyDesk: ["1.125rem", { lineHeight: "1.5rem" }],
@@ -123,7 +123,7 @@ largeMobile: ["2.986rem", { lineHeight: "3.5rem" }],
 xlargeMobile: ["6rem", { lineHeight: "6rem" }],
     },
 
-    /* Tilføj dit fontvægt-hierarki nedenfor */
+    /* fontvægt-hierarki */
     fontWeight: {
       light: "300",
       regular: "400",
@@ -132,7 +132,7 @@ xlargeMobile: ["6rem", { lineHeight: "6rem" }],
       extrabold: "700",
     },
 
-    /* Borders - borderstørrelser herunder */
+    /* Borders - borderstørrelser  */
     borderWidth: {
       DEFAULT: "1px",
       none: "0px",
@@ -147,10 +147,10 @@ xlargeMobile: ["6rem", { lineHeight: "6rem" }],
       "4xl": "9px",
     },
 
-    /* Box shadows herunder */
+   
 
     extend: {
-      /* Border radius størrelser herunder */
+      /* Border radius  */
       borderRadius: {
         DEFAULT: "1.25rem",
         none: "0px",
@@ -162,6 +162,7 @@ xlargeMobile: ["6rem", { lineHeight: "6rem" }],
         "border_radius-2xl": "79px",
         "border_radius-3xl": "100px",
       },
+       /* Box shadows */
       boxShadow: {
         long: "8px 10px 8px 0px rgba(68, 81, 57, 0.54)",
         short: "8px 10px 8px 0px rgba(68, 81, 57, 0.54)",
