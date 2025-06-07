@@ -21,8 +21,7 @@ console.log("Supabase anonKey:", apiDetails.supabaseAnonKey);
 
 ---
 
-<MainLayout title="Drikkevarer"
-description="Side med udvalg af drikkevarer">
+<MainLayout>
 
 <div class="product-page">
     <article class="product">
@@ -66,7 +65,7 @@ description="Side med udvalg af drikkevarer">
       
         <div class="product-detail">
             <div class="flex flex-col ml-auto pt-none md:pt-6xl">
-                 <div class="flex flex-wrap md:gap-s">
+                 <div class="flex flex-wrap md:gap-s justify-evenly">
   {data.map((product) => <ProductCard {product} /> )}
             </div>
         </div>
@@ -207,4 +206,3 @@ if(! supportsSticky()) {
     });
 }
 </script>
-
